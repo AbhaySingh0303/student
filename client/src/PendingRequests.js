@@ -11,7 +11,7 @@ const PendingRequests = ({ onUserApproved }) => {
 
     const fetchPendingRequests = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/pending-requests');
+            const res = await axios.get('https://e-campus-backend.onrender.com/api/pending-requests');
             setPendingUsers(res.data);
         } catch (error) {
             console.error("Failed to fetch pending requests:", error);
@@ -24,7 +24,7 @@ const PendingRequests = ({ onUserApproved }) => {
 
     const handleApprove = async (trackId) => {
         try {
-            const res = await axios.put(`http://localhost:5000/api/approve-user/${trackId}`, { registrationNo });
+            const res = await axios.put(`https://e-campus-backend.onrender.com/api/approve-user/${trackId}`, { registrationNo });
             alert(`User approved! Credentials are: Username - ${res.data.username}, Password - ${res.data.password}`);
             onUserApproved();
             fetchPendingRequests();
