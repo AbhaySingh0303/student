@@ -35,7 +35,7 @@ const StudentList = ({ students, examResults, onStudentUpdated, onStudentDeleted
 
   const handleDeleteStudent = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/students/${id}`, {
+      await axios.delete(`https://e-campus-backend.onrender.com/api/students/${id}`, {
         headers: { Authorization: `Bearer ${user?.token}` },
       });
       if (onStudentDeleted) onStudentDeleted();
@@ -59,7 +59,7 @@ const StudentList = ({ students, examResults, onStudentUpdated, onStudentDeleted
         data.append('photo', editFormData.photo);
       }
 
-      await axios.put(`http://localhost:5000/api/students/${id}`, data, {
+      await axios.put(`https://e-campus-backend.onrender.com/api/students/${id}`, data, {
         headers: {
           Authorization: `Bearer ${user?.token}`,
           'Content-Type': 'multipart/form-data',
@@ -131,7 +131,7 @@ const StudentList = ({ students, examResults, onStudentUpdated, onStudentDeleted
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                   {student.photo ? (
                     <img
-                      src={`http://localhost:5000${student.photo}`}
+                      src={`https://e-campus-backend.onrender.com${student.photo}`}
                       alt={student.name}
                       style={{ width: 50, height: 50, borderRadius: '50%' }}
                     />
