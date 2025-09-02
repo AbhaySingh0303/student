@@ -11,7 +11,7 @@ const ExamSchedule = () => {
 
   const fetchSchedules = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/examschedule');
+      const res = await axios.get('https://e-campus-backend.onrender.com/api/examschedule');
       setSchedules(res.data);
     } catch (error) {
       console.error("Failed to fetch schedules:", error);
@@ -36,7 +36,7 @@ const ExamSchedule = () => {
       data.append('date', formData.date);
       if (file) data.append('file', file);
 
-      await axios.post('http://localhost:5000/api/examschedule', data);
+      await axios.post('https://e-campus-backend.onrender.com/api/examschedule', data);
       alert('Exam schedule added!');
       fetchSchedules();
       setFormData({ title: '', description: '', date: '' });
@@ -117,7 +117,7 @@ const ExamSchedule = () => {
             </Typography>
             {schedule.file && (
               <Button
-                href={`http://localhost:5000${schedule.file}`}
+                href={`https://e-campus-backend.onrender.com${schedule.file}`}
                 target="_blank"
                 variant="outlined"
                 sx={{ mt: 1 }}
