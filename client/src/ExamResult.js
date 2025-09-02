@@ -42,7 +42,7 @@ const ExamResult = ({ students, examResults, onResultAdded }) => {
     e.preventDefault();
     try {
       await axios.post(
-        'http://localhost:5000/api/examresults',
+        'https://e-campus-backend.onrender.com/api/examresults',
         { ...formData, studentId },
         { headers: { Authorization: `Bearer ${user?.token}` } }
       );
@@ -66,7 +66,7 @@ const ExamResult = ({ students, examResults, onResultAdded }) => {
   const handleUpdateMarks = async (resultId) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/examresults/${resultId}`,
+        `https://e-campus-backend.onrender.com/api/examresults/${resultId}`,
         { subject: editSubject, marks: editMarks, maxMarks: editMaxMarks },
         { headers: { Authorization: `Bearer ${user?.token}` } }
       );
@@ -80,7 +80,7 @@ const ExamResult = ({ students, examResults, onResultAdded }) => {
   // ✅ Delete result
   const handleDeleteResult = async (resultId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/examresults/${resultId}`, {
+      await axios.delete(`https://e-campus-backend.onrender.com/api/examresults/${resultId}`, {
         headers: { Authorization: `Bearer ${user?.token}` },
       });
       onResultAdded();
@@ -113,7 +113,7 @@ const ExamResult = ({ students, examResults, onResultAdded }) => {
             <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                 {student.photo ? (
-                  <img src={`http://localhost:5000${student.photo}`} alt={student.name} style={{ width: 50, height: 50, borderRadius: '50%' }} />
+                  <img src={`https://e-campus-backend.onrender.com${student.photo}`} alt={student.name} style={{ width: 50, height: 50, borderRadius: '50%' }} />
                 ) : (
                   <Box sx={{ width: 50, height: 50, bgcolor: 'grey.300', borderRadius: '50%' }} />
                 )}
