@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
   // Login function
   const login = async (username, password) => {
-    const res = await axios.post("http://localhost:5000/api/login", {
+    const res = await axios.post("https://e-campus-backend.onrender.com/api/login", {
       username,
       password,
     });
