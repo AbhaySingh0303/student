@@ -15,7 +15,7 @@ const Notes = () => {
 
     const fetchNotes = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/notes');
+            const res = await axios.get('https://e-campus-backend.onrender.com/api/notes');
             setNotes(res.data);
             const subjectsFromNotes = [...new Set(res.data.map(note => note.subject))];
             setAvailableSubjects(subjectsFromNotes);
@@ -51,7 +51,7 @@ const Notes = () => {
             data.append('subject', selectedSubject);
             if (file) data.append('file', file);
 
-            const res = await axios.post('http://localhost:5000/api/notes', data);
+            const res = await axios.post('https://e-campus-backend.onrender.com/api/notes', data);
             setNotes([...notes, res.data]);
             setFormData({ title: '', content: '' });
             setFile(null);
@@ -152,7 +152,7 @@ const Notes = () => {
                                 {note.content}
                             </Typography>
                             {note.file && (
-                                <Button href={`http://localhost:5000${note.file}`} target="_blank" variant="outlined" sx={{ mt: 1 }}>
+                                <Button href={`https://e-campus-backend.onrender.com${note.file}`} target="_blank" variant="outlined" sx={{ mt: 1 }}>
                                     Download File
                                 </Button>
                             )}
