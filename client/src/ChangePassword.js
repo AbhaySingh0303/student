@@ -14,7 +14,7 @@ const ChangePassword = () => {
       return;
     }
     try {
-      await axios.put('http://localhost:5000/api/change-password', { oldPassword, newPassword });
+      await axios.put('https://e-campus-backend.onrender.com/api/change-password', { oldPassword, newPassword });
       alert('Password changed successfully!');
       setOldPassword('');
       setNewPassword('');
