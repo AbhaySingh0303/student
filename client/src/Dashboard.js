@@ -40,11 +40,11 @@ const Dashboard = () => {
   const fetchAllData = useCallback(async () => {
     if (!user?.token) return;
     try {
-      const studentsRes = await axios.get("http://localhost:5000/api/students", {
+      const studentsRes = await axios.get("https://e-campus-backend.onrender.com/api/students", {
         headers: { Authorization: `Bearer ${user.token}`, "Cache-Control": "no-cache" },
       });
 
-      const resultsRes = await axios.get("http://localhost:5000/api/examresults", {
+      const resultsRes = await axios.get("https://e-campus-backend.onrender.com/api/examresults", {
         headers: { Authorization: `Bearer ${user.token}`, "Cache-Control": "no-cache" },
       });
 
