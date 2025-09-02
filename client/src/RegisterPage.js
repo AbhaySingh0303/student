@@ -18,7 +18,7 @@ const RegisterPage = ({ toggleView }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/register', formData);
+      const res = await axios.post('https://e-campus-backend.onrender.com/api/register', formData);
       if (formData.role === 'student') {
         setTrackId(res.data.trackId);
         alert('Registration request submitted! Please save your track ID.');
