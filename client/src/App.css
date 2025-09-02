@@ -1,0 +1,70 @@
+/* client/src/App.css */
+
+body {
+  background-color: #333d45 !important;
+}
+
+.MuiPaper-root {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease;
+}
+
+.MuiPaper-root:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+}
+
+.MuiTypography-h5 {
+  font-weight: 600 !important;
+  color: #333;
+}
+
+.MuiButton-root {
+  text-transform: none !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 12px 24px !important;
+}
+
+.MuiButton-contained {
+  background-color: #1976d2 !important;
+}
+
+.MuiButton-contained:hover {
+  background-color: #1565c0 !important;
+}
+
+.Mui-selected {
+  color: #1976d2 !important;
+  font-weight: 600 !important;
+  border-bottom: 2px solid #1976d2 !important;
+}
+
+.MuiTab-root {
+  text-transform: none !important;
+}
+
+.MuiTextField-root {
+  margin-top: 16px !important;
+}
+
+/* Custom styles for calendar */
+.react-calendar {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__tile.present {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.react-calendar__tile.absent {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+.react-calendar__tile.leave {
+  background-color: #ff9800 !important;
+  color: white !important;
+}

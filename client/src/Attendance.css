@@ -1,0 +1,15 @@
+/* Attendance.css */
+.react-calendar__tile.present {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+.react-calendar__tile.absent {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+.react-calendar__tile.leave {
+  background-color: #ff9800 !important;
+  color: white !important;
+}
