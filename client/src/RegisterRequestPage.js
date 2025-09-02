@@ -53,7 +53,7 @@ const RegisterRequest = () => {
               role,
             };
 
-      const res = await axios.post('http://localhost:5000/api/register', payload);
+      const res = await axios.post('https://e-campus-backend.onrender.com/api/register', payload);
 
       if (role === 'teacher') {
         setSuccessMsg('Teacher registered successfully. You can now login.');
