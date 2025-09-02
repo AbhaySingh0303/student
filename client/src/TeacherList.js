@@ -11,7 +11,7 @@ const TeacherList = () => {
   useEffect(() => {
     const fetchTeachers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/teachers", {
+        const res = await axios.get("https://e-campus-backend.onrender.com/api/teachers", {
           headers: { Authorization: `Bearer ${user?.token}` },
         });
         setTeachers(res.data);
