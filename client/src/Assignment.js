@@ -12,7 +12,7 @@ const Assignment = ({ students }) => {
 
   const fetchAssignments = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/assignments');
+      const res = await axios.get('https://e-campus-backend.onrender.com/api/assignments');
       setAssignments(res.data);
     } catch (error) {
       console.error("Failed to fetch assignments:", error);
@@ -50,7 +50,7 @@ const Assignment = ({ students }) => {
         data.append('file', file);
       }
 
-      await axios.post('http://localhost:5000/api/assignments', data, {
+      await axios.post('https://e-campus-backend.onrender.com/api/assignments', data, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -70,7 +70,7 @@ const Assignment = ({ students }) => {
       data.append('studentId', submissionData.studentId);
       data.append('submissionFile', submissionData.submissionFile);
 
-      await axios.post(`http://localhost:5000/api/assignments/${assignmentId}/submit`, data, {
+      await axios.post(`https://e-campus-backend.onrender.com/api/assignments/${assignmentId}/submit`, data, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -121,7 +121,7 @@ const Assignment = ({ students }) => {
             <Typography variant="body2" color="text.secondary">{assignment.description}</Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>Due Date: {new Date(assignment.dueDate).toLocaleDateString()}</Typography>
             {assignment.file && (
-              <Button href={`http://localhost:5000${assignment.file}`} target="_blank" variant="outlined" sx={{ mt: 1 }}>
+              <Button href={`https://e-campus-backend.onrender.com${assignment.file}`} target="_blank" variant="outlined" sx={{ mt: 1 }}>
                 Download File
               </Button>
             )}
@@ -158,7 +158,7 @@ const Assignment = ({ students }) => {
                         <Typography variant="body2">
                           <strong>Date:</strong> {new Date(submission.submissionDate).toLocaleString()}
                         </Typography>
-                        <Button href={`http://localhost:5000${submission.submissionFile}`} target="_blank" variant="text" size="small">
+                        <Button href={`https://e-campus-backend.onrender.com${submission.submissionFile}`} target="_blank" variant="text" size="small">
                           Download Submitted File
                         </Button>
                       </Box>
