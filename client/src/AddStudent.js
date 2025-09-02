@@ -25,7 +25,7 @@ const AddStudent = ({ onStudentAdded }) => {
         data.append('photo', photo);
       }
 
-      await axios.post('http://localhost:5000/api/students', data, {
+      await axios.post('https://e-campus-backend.onrender.com/api/students', data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
