@@ -47,7 +47,7 @@ const Attendance = ({ students, onAttendanceAdded }) => {
     if (selectedStudent) {
       const fetchAttendance = async () => {
         try {
-          const res = await axios.get(`http://localhost:5000/api/students/${selectedStudent._id}`);
+          const res = await axios.get(`https://e-campus-backend.onrender.com/api/students/${selectedStudent._id}`);
           setAttendanceRecords(res.data.attendance || []);
         } catch (err) {
           console.error("Failed to fetch student attendance:", err);
@@ -72,7 +72,7 @@ const Attendance = ({ students, onAttendanceAdded }) => {
         ...record,
         date: selectedDate
       }));
-      await axios.post('http://localhost:5000/api/attendance/bulk-update', formattedData);
+      await axios.post('https://e-campus-backend.onrender.com/api/attendance/bulk-update', formattedData);
       if (onAttendanceAdded) onAttendanceAdded();
       alert("Attendance records updated successfully!");
     } catch (error) {
@@ -89,11 +89,11 @@ const Attendance = ({ students, onAttendanceAdded }) => {
         return;
       }
       await axios.put(
-        `http://localhost:5000/api/students/${selectedStudent._id}/add-attendance`,
+        `https://e-campus-backend.onrender.com/api/students/${selectedStudent._id}/add-attendance`,
         { date: singleStudentDate, status: singleStudentStatus }
       );
       // Refresh the attendance for the student
-      const res = await axios.get(`http://localhost:5000/api/students/${selectedStudent._id}`);
+      const res = await axios.get(`https://e-campus-backend.onrender.com/api/students/${selectedStudent._id}`);
       setAttendanceRecords(res.data.attendance || []);
       if (onAttendanceAdded) onAttendanceAdded();
       alert("Attendance recorded successfully!");
@@ -227,7 +227,7 @@ const Attendance = ({ students, onAttendanceAdded }) => {
               <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                   {s.photo ? (
-                    <img src={`http://localhost:5000${s.photo}`} alt={s.name} style={{ width: 50, height: 50, borderRadius: '50%' }} />
+                    <img src={`https://e-campus-backend.onrender.com${s.photo}`} alt={s.name} style={{ width: 50, height: 50, borderRadius: '50%' }} />
                   ) : (
                     <Box sx={{ width: 50, height: 50, bgcolor: 'grey.300', borderRadius: '50%' }} />
                   )}
