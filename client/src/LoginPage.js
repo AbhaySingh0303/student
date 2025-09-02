@@ -11,7 +11,7 @@ const StudentLoginDetails = () => {
 
   const checkStatus = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/user-details/${trackId}`);
+      const res = await axios.get(`https://e-campus-backend.onrender.com/api/user-details/${trackId}`);
       setCredentials(res.data);
       alert('Your account has been approved. You can now set your password.');
     } catch (error) {
@@ -27,7 +27,7 @@ const StudentLoginDetails = () => {
     }
 
     try {
-      await axios.put(`http://localhost:5000/api/create-password`, { newPassword }, {
+      await axios.put(`https://e-campus-backend.onrender.com/api/create-password`, { newPassword }, {
         headers: { Authorization: `Bearer ${credentials.token}` }
       });
       alert('Password set successfully! You can now log in.');
